@@ -17,10 +17,10 @@ html {
   font-size: 18px;
   background-color: #1b1919;
 
-  /************************************центрируем страницу************************************/
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/************************************центрируем**********************************************/
+display: flex;
+justify-content: center;
+align-items: center;
 /************************************-------------------************************************/
 }
 
@@ -44,17 +44,15 @@ ol {
 }
 
 
-/************************************Начало моего кода************************************/
+/************************************мой код************************************/
 
 .content {
-  display: flex;
   width:  1140px;
+  height: 534px;
   gap: 30px;
-  /* height: 534px;  */
+  display: flex;
   justify-content: center;
   align-items: flex-end;
-  
-  
   
 
 }
@@ -124,7 +122,48 @@ ol {
   flex-grow: 1;
 }
 
-/* .more-button {
-  display: block;
-} */
+.search-form__fieldset-title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
 
+}
+
+.title {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 94%;
+  /* or 70px */
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__card-link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.content__video-card-title {
+  font-family: Oswald;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 30px;
+  
+}
+
+.content__video-card-description {
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 16px;
+  /* or 90% */
+  margin-top: 6px;
+
+}
