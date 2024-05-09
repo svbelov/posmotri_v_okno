@@ -17,11 +17,9 @@ html {
   font-size: 18px;
   background-color: #1b1919;
 
-/************************************центрируем**********************************************/
-display: flex;
-justify-content: center;
-align-items: center;
-/************************************-------------------************************************/
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -43,28 +41,30 @@ ol {
   list-style: none;
 }
 
-
-/************************************мой код************************************/
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
 
 .content {
-  width:  1140px;
+  width: 1140px;
   height: 534px;
   gap: 30px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  
-
 }
-
 
 .result__video-container {
   width: 711px;
   height: 386px;
   margin-bottom: 16px;
-
   position: relative;
-
 }
 
 .result__video {
@@ -72,7 +72,6 @@ ol {
   height: 100%;
   object-fit: cover;
   object-position: center;
-
 }
 
 .search-form {
@@ -91,14 +90,13 @@ ol {
 
 .content__list {
   height: 534px;
-  overflow: scroll;
+  overflow: auto;
   position: relative;
-  
+  padding-bottom: 1px;
 }
 
 .content__list-item {
   margin-bottom: 30px;
-
 }
 
 .content__list-item:last-child {
@@ -108,6 +106,8 @@ ol {
 .content__video-card {
   display: flex;
   align-items: flex-start;
+  padding: 2px;
+  height: 107px;
 }
 
 .content__video-card-thumbnail {
@@ -115,7 +115,6 @@ ol {
   height: 103px;
   object-fit: cover;
   object-position: center;
-
 }
 
 .content__video-card-description-container {
@@ -127,7 +126,7 @@ ol {
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
-
+  margin-bottom: 5px;
 }
 
 .title {
@@ -135,8 +134,7 @@ ol {
   font-style: normal;
   font-weight: 700;
   font-size: 75px;
-  line-height: 94%;
-  /* or 70px */
+  line-height: 70px;
   text-transform: uppercase;
 }
 
@@ -146,7 +144,21 @@ ol {
 
 .content__card-link {
   text-decoration: none;
-  color: #ffffff;
+  color: #FFFFFF;
+  display: block;
+  margin: 2px;
+}
+
+.content__card-link_current:active {
+  background-color: #545050;
+}
+
+.content__video-card:hover .content__video-card-description-container {
+  text-decoration: underline;
+}
+
+.content__video-card:focus-visible {
+  outline: 1px solid #FFFFFF;
 }
 
 .content__video-card-title {
@@ -154,7 +166,6 @@ ol {
   font-size: 30px;
   font-weight: 700;
   line-height: 30px;
-  
 }
 
 .content__video-card-description {
@@ -163,7 +174,113 @@ ol {
   font-weight: 400;
   font-size: 18px;
   line-height: 16px;
-  /* or 90% */
   margin-top: 6px;
-
 }
+
+.search-form {
+  display: flex;
+  align-items: baseline; 
+  width: 711px;
+  height: 54px;
+}
+
+.search-form__fieldset {
+  border: 0;
+}
+
+.search-form__textfield {
+  appearance: none;
+  width: 225px;
+  height: 27px;
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: transparent;
+  border-width: 1px 0px;
+  border-style: solid;
+  border-color: #FFFFFF;
+}
+
+.search-form__pseudo-checkbox {
+  width: 19px;
+  height: 19px;
+  border: solid 1px white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-form__label {
+  display: flex;
+  width: fit-content;
+  gap: 5px;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.button {
+  cursor: pointer;
+  border: 1px solid #FFFFFF;
+  font-family: 'Fira Sans Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: transparent;
+  align-self: end;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #FFFFFF;
+  outline-offset: 1px;
+}
+
+.search-form__submit-button {
+  padding: 6px 73.5px;
+}
+
+.more-button {
+  padding: 6px 136px;
+}
+
+.search-form__textfield:focus {
+    outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+    outline: 1px solid #FFFFFF;
+    outline-offset: 1px;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-color: white;
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+}
+
