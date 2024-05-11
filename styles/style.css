@@ -104,10 +104,6 @@ ol {
   display: flex;
   align-items: flex-start;
   padding: 2px;
-  overflow: hidden;
-  /*защита от переполнения текстом:*/
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .content__video-card-thumbnail {
@@ -158,7 +154,7 @@ ol {
   outline: none;
 }
 
-.content__video-link:focus-visible {
+.content__card-link:focus-visible {
   outline: 1px solid #FFFFFF;
 }
 
@@ -172,6 +168,11 @@ ol {
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
+  /*защита от переполнения текстом:*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 200px;
 }
 
 .content__video-card-description {
